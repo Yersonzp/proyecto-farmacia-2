@@ -127,7 +127,7 @@ public class SIF2 {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date fechaVenta = new Date(); // Obten la fecha actual
 
-        // Genera un número de factura único (puedes personalizar esto)
+        // Genera un número de factura único ( se puede personalizar)
         int numeroFactura = generarNumeroFactura();
 
         // Imprime la factura en la consola
@@ -286,9 +286,9 @@ public class SIF2 {
         String nombre = scanner.nextLine();
         System.out.print("Tipo: ");
         String tipo = scanner.nextLine();
-        System.out.print("Lote: ");
+        System.out.print("Ingrese la fecha del lote (dd/mm/aa): ");
         String lote = scanner.nextLine();
-        System.out.print("Fecha de vencimiento: ");
+        System.out.print("Fecha de vencimiento (dd/mm/aa): ");
         String fechaVencimiento = scanner.nextLine();
         System.out.print("Cantidad disponible: ");
         int cantidad = Integer.parseInt(scanner.nextLine());
@@ -466,6 +466,7 @@ class Producto {
         this.cantidad = cantidad;
     }
 
+
     public void setCodigoBarras(String codigoBarras) {
         this.codigoBarras = codigoBarras;
     }
@@ -478,8 +479,8 @@ class Producto {
         this.tipo = tipo;
     }
 
-    public void setLote(String lote) {
-        this.lote = lote;
+    public void setLote(String nuevoLote) {
+        this.lote = nuevoLote;
     }
 
     public void setFechaVencimiento(String fechaVencimiento) {
