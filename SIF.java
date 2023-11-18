@@ -97,7 +97,8 @@ function mostrarMenuAdministrador() {
       console.log("Salir");
       break;
 
-
+// menu y funciones del administrador
+          
     function mostrarMenuAdministrador() {
   console.log("Menú de administrador");
   console.log("1. Administrar usuarios");
@@ -237,4 +238,106 @@ function agregarProducto() {
       console.log("Opción no válida");
       break;
   }
+}
+
+// menu y las funciones del vendedor
+    
+function mostrarMenuVendedor() {
+  console.log("Menú de vendedor");
+  console.log("1. Vender productos");
+  console.log("2. Consultar inventario");
+  console.log("3. Generar factura");
+  console.log("4. Salir");
+
+  const opcion = prompt("Seleccione una opción: ");
+
+  switch (opcion) {
+    case "1":
+      venderProductos();
+      break;
+    case "2":
+      consultarInventario();
+      break;
+    case "3":
+      generarFactura();
+      break;
+    case "4":
+      console.log("Salir");
+      break;
+    default:
+      console.log("Opción no válida");
+      break;
+  }
+}
+
+function venderProductos() {
+  console.log("Vender productos");
+
+  // Obtener los datos de la venta
+  const productos = [];
+  do {
+    const producto = prompt("Ingrese el código del producto: ");
+    const cantidad = prompt("Ingrese la cantidad del producto: ");
+    productos.push({
+      codigo: producto,
+      cantidad: cantidad,
+    });
+  } while (prompt("¿Desea agregar otro producto? (S/N): ") === "S");
+
+  // Realizar la venta
+  // ...
+
+  console.log("Venta realizada correctamente");
+}
+
+function consultarInventario() {
+  console.log("Consultar inventario");
+
+  // Obtener los productos del inventario
+  // ...
+
+  // Imprimir los productos
+  // ...
+}
+
+function generarFactura() {
+  console.log("Generar factura");
+
+  // Obtener los datos de la factura
+  const cliente = prompt("Ingrese el nombre del cliente: ");
+  const fecha = prompt("Ingrese la fecha de la factura: ");
+  const productos = [];
+  do {
+    const producto = prompt("Ingrese el código del producto: ");
+    const cantidad = prompt("Ingrese la cantidad del producto: ");
+    const precio = prompt("Ingrese el precio del producto: ");
+    productos.push({
+      codigo: producto,
+      cantidad: cantidad,
+      precio: precio,
+    });
+  } while (prompt("¿Desea agregar otro producto? (S/N): ") === "S");
+
+  // Calcular el total de la factura
+  const total = productos.reduce((acumulador, producto) => acumulador + producto.cantidad * producto.precio, 0);
+
+  // Imprimir la factura
+  console.log("--------------------------------------------------------");
+  console.log("Factura");
+  console.log("Fecha: " + fecha);
+  console.log("Cliente: " + cliente);
+  console.log("--------------------------------------------------------");
+  console.log("Producto | Cantidad | Precio | Subtotal");
+  console.log("--------------------------------------------------------");
+  productos.forEach((producto) => {
+    console.log(
+      producto.codigo + " | " +
+      producto.cantidad + " | " +
+      producto.precio + " | " +
+      producto.cantidad * producto.precio
+    );
+  });
+  console.log("--------------------------------------------------------");
+  console.log("Total: " + total);
+  console.log("--------------------------------------------------------");
 }
