@@ -312,8 +312,32 @@ function generarFactura(productos) {
   // ...
 
   // Guardar la factura en la base de datos
-  // ...
+const conn = new MongoClient("mongodb://localhost:27017/mydb");
+conn.connect((err) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
 
+  const db = conn.db("mydb");
+  const facturaCollection = db.collection("facturas");
+
+  const factura = {
+    cliente: cliente,
+    fecha: fecha,
+    productos: productos,
+    total: total,
+  };
+
+  facturaCollection.insertOne(factura, (err, res) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+
+    console.log("Factura guardada correctamente");
+  });
+})
   // Imprimir la factura
   console.log("--------------------------------------------------------");
   console.log("Factura");
