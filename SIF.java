@@ -96,6 +96,143 @@ function mostrarMenuAdministrador() {
     case "3":
       console.log("Salir");
       break;
+
+
+    function mostrarMenuAdministrador() {
+  console.log("Menú de administrador");
+  console.log("1. Administrar usuarios");
+  console.log("2. Administrar productos");
+  console.log("3. Generar informe");
+  console.log("4. Salir");
+
+  const opcion = prompt("Seleccione una opción: ");
+
+  switch (opcion) {
+    case "1":
+      administrarUsuarios();
+      break;
+    case "2":
+      administrarProductos();
+      break;
+    case "3":
+      generarInforme();
+      break;
+    case "4":
+      console.log("Salir");
+      break;
+    default:
+      console.log("Opción no válida");
+      break;
+  }
+}
+
+function administrarUsuarios() {
+  console.log("Administrar usuarios");
+  console.log("1. Agregar usuario");
+  console.log("2. Eliminar usuario");
+  console.log("3. Modificar usuario");
+  console.log("4. Regresar");
+
+  const opcion = prompt("Seleccione una opción: ");
+
+  switch (opcion) {
+    case "1":
+      agregarUsuario();
+      break;
+    case "2":
+      eliminarUsuario();
+      break;
+    case "3":
+      modificarUsuario();
+      break;
+    case "4":
+      mostrarMenuAdministrador();
+      break;
+    default:
+      console.log("Opción no válida");
+      break;
+  }
+}
+
+function agregarUsuario() {
+  console.log("Agregar usuario");
+
+  // Obtener los datos del usuario
+  const nombreUsuario = prompt("Ingrese el nombre de usuario: ");
+  const contraseña = prompt("Ingrese la contraseña: ");
+  const tipoUsuario = prompt("Ingrese el tipo de usuario (administrador/vendedor): ");
+
+  // Agregar el usuario a la base de datos
+  // ...
+
+  console.log("Usuario agregado correctamente");
+}
+
+function eliminarUsuario() {
+  console.log("Eliminar usuario");
+
+  // Obtener el nombre de usuario del usuario a eliminar
+  const nombreUsuario = prompt("Ingrese el nombre de usuario del usuario a eliminar: ");
+
+  // Eliminar el usuario de la base de datos
+  // ...
+
+  console.log("Usuario eliminado correctamente");
+}
+
+function modificarUsuario() {
+  console.log("Modificar usuario");
+
+  // Obtener el nombre de usuario del usuario a modificar
+  const nombreUsuario = prompt("Ingrese el nombre de usuario del usuario a modificar: ");
+
+  // Obtener los datos del usuario a modificar
+  const contraseña = prompt("Ingrese la nueva contraseña: ");
+  const tipoUsuario = prompt("Ingrese el nuevo tipo de usuario (administrador/vendedor): ");
+
+  // Modificar el usuario en la base de datos
+  // ...
+
+  console.log("Usuario modificado correctamente");
+}
+
+function administrarProductos() {
+  console.log("Administrar productos");
+  console.log("1. Agregar producto");
+  console.log("2. Eliminar producto");
+  console.log("3. Modificar producto");
+  console.log("4. Regresar");
+
+  const opcion = prompt("Seleccione una opción: ");
+
+  switch (opcion) {
+    case "1":
+      agregarProducto();
+      break;
+    case "2":
+      eliminarProducto();
+      break;
+    case "3":
+      modificarProducto();
+      break;
+    case "4":
+      mostrarMenuAdministrador();
+      break;
+    default:
+      console.log("Opción no válida");
+      break;
+  }
+}
+
+function agregarProducto() {
+  console.log("Agregar producto");
+
+  // Obtener los datos del producto
+  const codigo = prompt("Ingrese el código del producto: ");
+  const nombre = prompt("Ingrese el nombre del producto: ");
+  const descripcion = prompt("Ingrese la descripción del producto: ");
+  const precio = prompt("Ingrese el precio del producto: ");
+  const stock = prompt("Ingrese el stock del producto: ");
     default:
       console.log("Opción no válida");
       break;
