@@ -76,3 +76,28 @@ function mostrarMenuVendedor() {
       break;
   }
 }
+
+
+function mostrarMenuAdministrador() {
+  console.log("Menú de administrador");
+  console.log("1. Administrar usuarios");
+  console.log("2. Administrar productos");
+  console.log("3. Salir");
+
+  const opcion = prompt("Seleccione una opción: ");
+
+  switch (opcion) {
+    case "1":
+      console.log("Administrar usuarios");
+      break;
+    case "2":
+      console.log("Administrar productos");
+      break;
+    case "3":
+      console.log("Salir");
+      break;
+    default:
+      console.log("Opción no válida");
+      break;
+  }
+}
