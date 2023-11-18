@@ -287,6 +287,9 @@ function venderProductos() {
   // Realizar la venta
   // ...
 
+  // Generar la factura
+  generarFactura(productos);
+
   console.log("Venta realizada correctamente");
 }
 
