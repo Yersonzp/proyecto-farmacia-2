@@ -1,3 +1,19 @@
+package com.example.sif2;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Sif2Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Sif2Application.class, args);
+    }
+}
+//hasta aqui es sprintboot
+
+
+
 function login() {
   const usuarios = [
     ["admin", "admin123", "administrador"],
