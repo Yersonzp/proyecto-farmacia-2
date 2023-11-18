@@ -303,26 +303,16 @@ function consultarInventario() {
   // ...
 }
 
-function generarFactura() {
-  console.log("Generar factura");
-
+function generarFactura(productos) {
   // Obtener los datos de la factura
   const cliente = prompt("Ingrese el nombre del cliente: ");
   const fecha = prompt("Ingrese la fecha de la factura: ");
-  const productos = [];
-  do {
-    const producto = prompt("Ingrese el código del producto: ");
-    const cantidad = prompt("Ingrese la cantidad del producto: ");
-    const precio = prompt("Ingrese el precio del producto: ");
-    productos.push({
-      codigo: producto,
-      cantidad: cantidad,
-      precio: precio,
-    });
-  } while (prompt("¿Desea agregar otro producto? (S/N): ") === "S");
 
-  // Calcular el total de la factura
-  const total = productos.reduce((acumulador, producto) => acumulador + producto.cantidad * producto.precio, 0);
+  // Realizar la venta
+  // ...
+
+  // Guardar la factura en la base de datos
+  // ...
 
   // Imprimir la factura
   console.log("--------------------------------------------------------");
