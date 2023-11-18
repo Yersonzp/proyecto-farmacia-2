@@ -1,0 +1,63 @@
+function mostrarMenuAdministrador() {
+  console.log("Menú de administrador");
+  console.log("1. Administrar usuarios");
+  console.log("2. Administrar productos");
+  console.log("3. Generar informe");
+  console.log("4. Consultar historial de ventas");
+  console.log("5. Salir");
+
+  const opcion = prompt("Seleccione una opción: ");
+
+  switch (opcion) {
+    case "1":
+      administrarUsuarios();
+      break;
+    case "2":
+      administrarProductos();
+      break;
+    case "3":
+      generarInforme();
+      break;
+    case "4":
+      consultarHistorialVentas();
+      break;
+    case "5":
+      console.log("Salir");
+      break;
+    default:
+      console.log("Opción no válida");
+      break;
+  }
+}
+
+
+
+function consultarHistorialVentas() {
+  console.log("Consultar historial de ventas");
+
+  // Solicitar el nombre del vendedor
+  const vendedor = prompt("Ingrese el nombre del vendedor: ");
+
+  // Obtener las ventas del vendedor
+  const ventas = obtenerVentasPorVendedor(vendedor);
+
+  // Imprimir las ventas
+  ventas.forEach((venta) => {
+    console.log(
+      venta.fecha + " | " +
+      venta.cliente + " | " +
+      venta.productos.map((producto) => producto.codigo) + " | " +
+      venta.total
+    );
+  });
+}
+
+function obtenerVentasPorVendedor(vendedor) {
+  // Obtener todas las ventas
+  const ventas = obtenerTodasLasVentas();
+
+  // Filtrar las ventas por vendedor
+  const ventasFiltradas = ventas.filter((venta) => venta.vendedor === vendedor);
+
+  return ventasFiltradas;
+}
